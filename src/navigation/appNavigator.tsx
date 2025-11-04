@@ -1,19 +1,15 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import PokemonList from './src/components/PokemonList';
-import HomeScreen from './src/screens/HomeScreen';
-import DetailsScreen from './src/screens/DetailsScreen';
+import HomeScreen from '../screens/HomeScreen';
+import DetailsScreen from '../screens/DetailsScreen';
 
+const Stack = createStackNavigator();
 
-export type RootStackParamList = { Home: undefined; Details: { url: string; name: string } };
-const Stack = createStackNavigator<RootStackParamList>();
-
-
-export default function App() {
+export default function AppNavigator() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Home">
+      <Stack.Navigator>
         <Stack.Screen
           name="Home"
           component={HomeScreen}

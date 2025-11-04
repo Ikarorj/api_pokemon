@@ -1,5 +1,5 @@
 import axios from 'axios';
-import Post from '../post';
+import Post from '../model/entities/post';
 
 export class PostService {
     static url: string = 'https://jsonplaceholder.typicode.com/posts';
